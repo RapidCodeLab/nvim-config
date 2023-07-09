@@ -5,3 +5,4 @@ map('i', 'jj', '<Esc>', {noremap = true})
 
 
 map('n', '<leader>e', ':Neotree float focus<CR>', default_opts)
+map('n', '<leader>o', ':Neotree float git_status<CR>', default_opts)
