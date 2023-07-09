@@ -41,6 +41,9 @@ local plugins = {
 	    statuscolumn = {},
 	  })
 	end},
+	{
+	"nvim-treesitter/nvim-treesitter"
+	},
 }
 local opts = {}
 
