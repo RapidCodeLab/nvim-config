@@ -1,4 +1,4 @@
-	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -14,6 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	{"rebelot/kanagawa.nvim"},
 	{
 	"folke/tokyonight.nvim",
 	lazy=false,
@@ -33,14 +34,7 @@ local plugins = {
 	{
 	"rebelot/heirline.nvim",
 	lazy=false,
-	config = function()
-	  require("heirline").setup({
-	    statusline = {},
-	    winbar = {},
-	    tabline = {},
-	    statuscolumn = {},
-	  })
-	end},
+	},
 	{
 	"nvim-treesitter/nvim-treesitter"
 	},
