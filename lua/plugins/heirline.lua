@@ -3,6 +3,7 @@ local utils = require("heirline.utils")
 
 
 local Space = { provider = " " }
+
 local colors = require("kanagawa.colors").setup() -- wink
 
 local FileNameBlock = {
@@ -74,7 +75,7 @@ local FileNameModifer = {
         end
     end,
 }
-
+--
 -- let's add the children to our FileNameBlock component
 FileNameBlock = utils.insert(FileNameBlock,
     FileIcon,
@@ -83,6 +84,28 @@ FileNameBlock = utils.insert(FileNameBlock,
     { provider = '%<'} -- this means that the statusline is cut here when there's not enough space
 )
 
+-- We're getting minimalists here!
+local Ruler = {
+    -- %l = current line number
+    -- %L = number of lines in the buffer
+    -- %c = column number
+    -- %P = percentage through file of displayed window
+    provider = "%7(%l/%3L%):%2c %P",
+}
+-- I take no credits for this! :lion:
+local ScrollBar ={
+    static = {
+        sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
+        -- Another variant, because the more choice the better.
+        -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
+    },
+    provider = function(self)
+        local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+        local lines = vim.api.nvim_buf_line_count(0)
+        local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
+        return string.rep(self.sbar[i], 2)
+    end,
+}
 local ViMode = {
     -- get vim current mode, this information will be required by the provider
     -- and the highlight functions, so we compute it only once per component
@@ -154,7 +177,7 @@ local ViMode = {
     -- control the padding and make sure our string is always at least 2
     -- characters long. Plus a nice Icon.
     provider = function(self)
-        return " %2("..self.mode_names[self.mode].."%)"
+        return "%2("..self.mode_names[self.mode].."%)"
     end,
     -- Same goes for the highlight. Now the foreground will change according to the current mode.
     hl = function(self)
@@ -173,7 +196,7 @@ local ViMode = {
 }
 
 require("heirline").setup({
-    statusline = {ViMode, Space, FileNameBlock},
+    statusline = {Space, ViMode, Space, FileNameBlock, Space, Ruler, Space, ScrollBar},
     winbar = {},
     tabline = {},
     statuscolumn = {},
