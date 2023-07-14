@@ -16,12 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	{"rebelot/kanagawa.nvim"},
 	{
-	"folke/tokyonight.nvim",
-	lazy=false,
-	prority=1000,
-	opts={},
-	},
-	{
 	"nvim-neo-tree/neo-tree.nvim",
 	branch="v2.x",
 	dependencies={

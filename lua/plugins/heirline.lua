@@ -12,7 +12,7 @@ local FileNameBlock = {
     end,
 }
 -- We can now define some children separately and add them later
-
+---
 local FileIcon = {
     init = function(self)
         local filename = self.filename
@@ -26,7 +26,7 @@ local FileIcon = {
         return { fg = self.icon_color }
     end
 }
-
+--
 local FileName = {
     provider = function(self)
         -- first, trim the pattern relative to the current directory. For other
@@ -249,7 +249,7 @@ require("heirline").setup({
     statusline = {Space, ViMode, Space, FileNameBlock, Space, Git, Space, Ruler, Space, ScrollBar},
     winbar = {},
     tabline = {},
-    statuscolumn = {},
+    --statuscolumn = {},
     opts = {
 	colors = colors, 
     },
