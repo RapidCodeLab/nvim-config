@@ -31,6 +31,7 @@ local plugins = {
 		"s1n7ax/nvim-window-picker",
 	},
 	},
+	{"lewis6991/gitsigns.nvim"},
 	{
 	"rebelot/heirline.nvim",
 	lazy=false,
