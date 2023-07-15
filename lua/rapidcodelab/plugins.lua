@@ -33,6 +33,7 @@ local plugins = {
 	{
 	"nvim-treesitter/nvim-treesitter"
 	},
+	{"neovim/nvim-lspconfig"},
 }
 local opts = {}
 
