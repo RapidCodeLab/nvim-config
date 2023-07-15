@@ -27,6 +27,7 @@ local FileIcon = {
     end
 }
 --
+--
 local FileName = {
     provider = function(self)
         -- first, trim the pattern relative to the current directory. For other
@@ -43,7 +44,7 @@ local FileName = {
     end,
     hl = { fg = utils.get_highlight("Directory").fg },
 }
-
+---
 local FileFlags = {
     {
         condition = function()
@@ -117,7 +118,7 @@ local ViMode = {
     -- them at initialisation time.
     static = {
         mode_names = { -- change the strings if you like it vvvvverbose!
-            n = "N",
+            n = "NORMAL",
             no = "N?",
             nov = "N?",
             noV = "N?",
@@ -135,7 +136,7 @@ local ViMode = {
             s = "S",
             S = "S_",
             ["\19"] = "^S",
-            i = "I",
+            i = "INSERT",
             ic = "Ic",
             ix = "Ix",
             R = "R",
@@ -245,8 +246,20 @@ local Git = {
         provider = ")",
     },
 }
+
 require("heirline").setup({
-    statusline = {Space, ViMode, Space, FileNameBlock, Space, Git, Space, Ruler, Space, ScrollBar},
+    statusline = {
+	    Space,
+	    ViMode,
+	    Space,
+	    Git,
+	    Space,
+	    FileNameBlock,
+	    Space,
+	    Ruler,
+	    Space,
+	    ScrollBar
+    },
     winbar = {},
     tabline = {},
     --statuscolumn = {},
