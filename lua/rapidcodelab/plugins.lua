@@ -14,6 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  {"xiyaowong/transparent.nvim"},
 	{"rebelot/kanagawa.nvim"},
 	{
 	"nvim-neo-tree/neo-tree.nvim",
