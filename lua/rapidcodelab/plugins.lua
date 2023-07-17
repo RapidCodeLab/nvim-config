@@ -34,6 +34,8 @@ local plugins = {
 	{
 	"nvim-treesitter/nvim-treesitter"
 	},
+  {"williamboman/mason.nvim"},
+  {"williamboman/mason-lspconfig.nvim"},
 	{"neovim/nvim-lspconfig"},
 }
 local opts = {}

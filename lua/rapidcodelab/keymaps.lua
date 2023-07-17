@@ -10,3 +10,6 @@ map('n', '<leader>e', ':Neotree float focus<CR>', default_opts)
 map('n', '<leader>o', ':Neotree float git_status<CR>', default_opts)
 
 map('n', '<leader>c', ':bd<CR>', default_opts) --close buffer 
+
+
+map('n', '<leader>tt', ':TransparentToggle<CR>', default_opts)
