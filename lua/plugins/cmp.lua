@@ -1,4 +1,6 @@
-require("cmp").setup({
+local cmp = require("cmp")
+
+cmp.setup({
   snippet = {
     expand = function()
       vim.fn["UltiSnips#Anon"](args.body)
@@ -18,11 +20,8 @@ require("cmp").setup({
   sources = cmp.config.sources({
     {name = "nvim_lsp"},  
     {name = "ultisnips"},  
-  },
-  {
     {name = "buffer"},
-  },
-  ),
+  }),
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
