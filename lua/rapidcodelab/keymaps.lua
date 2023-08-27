@@ -14,3 +14,5 @@ map('n', '<leader>c', ':bd<CR>', default_opts) --close buffer
 
 map('n', '<leader>tt', ':TransparentToggle<CR>', default_opts)
 map('n', '<leader>mt', ':Mason<CR>', default_opts)
+
+map('n', '<leader>gf', ':GoFmt<CR>', default_opts)

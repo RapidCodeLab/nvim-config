@@ -2,7 +2,7 @@ local cmp = require("cmp")
 
 cmp.setup({
   snippet = {
-    expand = function()
+    expand = function(args)
       vim.fn["UltiSnips#Anon"](args.body)
     end,
   },

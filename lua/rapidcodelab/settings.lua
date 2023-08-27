@@ -10,5 +10,10 @@ o.shiftwidth = 2
 o.softtabstop = 2
 o.expandtab = true
 o.clipboard = unnamedplus
+o.showtabline = 2
 
 g.mapleader = " "
+
+
+vim.cmd([[au FileType * if index(['wipe', 'delete'], &bufhidden) >= 0 | set nobuflisted | endif]])
+
