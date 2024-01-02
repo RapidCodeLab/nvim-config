@@ -97,4 +97,6 @@ nvim_lsp.gopls.setup{
     end
   end
 
+  nvim_lsp.eslint.setup{}
+
 --vim.lsp.set_log_level("debug")
